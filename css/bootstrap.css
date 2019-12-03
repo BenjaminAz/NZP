@@ -35,6 +35,10 @@
   --font-family-monospace: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
 }
 
+.negropuro {
+    background-color: black;
+}
+
 *,
 *::before,
 *::after {
@@ -4061,7 +4065,7 @@ input[type="button"].btn-block {
 }
 
 .nav-link {
-  display: block;
+  display: inline-block;
   padding: 0.5rem 1rem;
 }
 
@@ -6574,7 +6578,7 @@ button.bg-danger:focus {
 a.bg-light:hover, a.bg-light:focus,
 button.bg-light:hover,
 button.bg-light:focus {
-  background-color: #dae0e5 !important;
+  background-color: #dae0a6 !important;
 }
 
 .bg-dark {
