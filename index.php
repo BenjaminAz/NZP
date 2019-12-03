@@ -12,18 +12,17 @@ require "templates/conexion.php";
     <meta charset="UTF-8">
     <title>Autos</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" >
     <link rel="stylesheet" href="css/estilos.css">
 </head>
 
 <body>
 
     <!------------------------------------------------------------------------------ HEADER --->
-    <header class="fondo">
-        <div class="container-fluid fondo3">
-            <div class="container">
-                <div class="row mb-3">
+    <header class="opct opacity-30 superior">
+        <div class="container-fluid bg-dark">
+            <div class="container-fluid">
+                <div class="row mb-4">
                     <div class="col text-right">
                         <?php   
                         
@@ -31,12 +30,34 @@ require "templates/conexion.php";
                             
                         ?>
 
-                        <div class="text-right text-light pt-3 pb-1 mr-4">
+                        <div class="container-fluid text-right text-light pt-3 pb-1 mr-6">
+                            <div class="row mb-1 text-right align-right">
+                                    <nav class="navbar navbar-light navbar-1 white">
+                                        
+                                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent15"
+                                aria-controls="navbarSupportedContent15" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+                                <div class="collapse navbar-collapse" id="navbarSupportedContent15">
+                                    <ul class="navbar-nav mr-auto">
+                                        <li class="nav-item active">
+                                            <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="#">Features</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="templates/cerrar.php" class="ml-5">Cerrar sesión</a></p>
+                                    </li>
+                                        </ul>
+                            </div>
+                            </nav>
+                        </div>
                             <img src="imagenes/user.png" alt="Avatar">
                             <p class="d-inline-block ml-2">Bienvenido
                                 <?php echo $_SESSION['nombre']; ?>
-                                <?php echo $_SESSION['apellido']; ?> <a href="templates/cerrar.php" class="ml-3 text-info">Cerrar sesión</a></p>
+                                <?php echo $_SESSION['apellido']; ?>
                         </div>
+                        
+                    
 
 
                         <?php
@@ -44,7 +65,7 @@ require "templates/conexion.php";
                         }else{
                             
                         ?>
-
+ 
                         <a href="index.php?e=2" class="text-secondary mr-3">Registrarse</a>
 
                         <form action="templates/login.php" method="post" class="form-inline my-2 mr-3 d-inline-flex justify-content-end">
@@ -75,10 +96,10 @@ require "templates/conexion.php";
                 <div class="collapse navbar-collapse" id="barra">
                     <ul class="navbar-nav ml-auto">
                         <li class="nav-item">
-                            <a class="nav-link" href="#">Autos</a>
+                            <a class="nav-link" href="#">Nuestros vehículos</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">Nosotros</a>
+                            <a class="nav-link" href="#">Servicios</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="#">Contacto</a>
