@@ -3,23 +3,6 @@
   * Copyright 2011-2019 The Bootstrap Authors (https://github.com/twbs/bootstrap/graphs/contributors)
   * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
   */
-
-$(document).ready(function () {
-
-  $('.first-button').on('click', function () {
-
-    $('.animated-icon1').toggleClass('open');
-  });
-  $('.second-button').on('click', function () {
-
-    $('.animated-icon2').toggleClass('open');
-  });
-  $('.third-button').on('click', function () {
-
-    $('.animated-icon3').toggleClass('open');
-  });
-});
-
 (function (global, factory) {
   typeof exports === 'object' && typeof module !== 'undefined' ? factory(exports, require('jquery')) :
   typeof define === 'function' && define.amd ? define(['exports', 'jquery'], factory) :
