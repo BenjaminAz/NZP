@@ -13,53 +13,48 @@ require "templates/conexion.php";
     <title>Autos</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" >
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" />
     <link rel="stylesheet" href="css/estilos.css">
+    <link rel="stylesheet" href="css/estilos.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/fotorama/4.6.4/fotorama.css" rel="stylesheet">
 </head>
 
-<body>
+<body class="negropuro">
 
     <!------------------------------------------------------------------------------ HEADER --->
     <header class="opct opacity-30 superior">
         <div class="container-fluid bg-dark">
-            <div class="container-fluid">
-                <div class="row mb-4">
-                    <div class="col text-right">
+                <div class="mb-1 ">
+                    <div class="text-right">
                         <?php   
                         
                         if( isset($_SESSION['nombre']) ){
                             
                         ?>
-
-                        <div class="container-fluid text-right text-light pt-3 pb-1 mr-6">
-                            <div class="row mb-1 text-right align-right">
-                                    <nav class="navbar navbar-light navbar-1 white">
+                            <div class="row text-right align-right ">
+                        <div class=" container-fluid text-right text-light">
+                            <img src="imagenes/user1.png" alt="Avatar" height="30rem">
+                            <p class="d-inline-block ml-2">Bienvenido
+                                <?php echo $_SESSION['nombre']; ?>
+                                <?php echo $_SESSION['apellido']; ?>
+                                    <nav class="d-inline navbar navbar-light">
                                         
-                                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent15"
-                                aria-controls="navbarSupportedContent15" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+                                <button class="navbar-toggler bg-light" type="button" data-toggle="collapse" data-target="#navbarSupportedContent15"
+                                aria-controls="navbarSupportedContent15" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon bg-light"></span></button>
                                 <div class="collapse navbar-collapse" id="navbarSupportedContent15">
                                     <ul class="navbar-nav mr-auto">
                                         <li class="nav-item active">
-                                            <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+                                            <a class="nav-link text-light" href="#">Mi Perfil <span class="sr-only">(current)</span></a>
                                         </li>
                                         <li class="nav-item">
-                                            <a class="nav-link" href="#">Features</a>
-                                        </li>
-                                        <li class="nav-item">
-                                            <a class="nav-link" href="templates/cerrar.php" class="ml-5">Cerrar sesión</a></p>
+                                            <a class="nav-link text-light" href="templates/cerrar.php" class="ml-5">Cerrar sesión</a></p>
                                     </li>
                                         </ul>
                             </div>
                             </nav>
                         </div>
-                            <img src="imagenes/user.png" alt="Avatar">
-                            <p class="d-inline-block ml-2">Bienvenido
-                                <?php echo $_SESSION['nombre']; ?>
-                                <?php echo $_SESSION['apellido']; ?>
                         </div>
-                        
                     
-
-
                         <?php
                             
                         }else{
@@ -76,30 +71,27 @@ require "templates/conexion.php";
 
                         <?php
                             
-                        } // cierra el if de sesión de usuario
+                        }
                         
                         ?>
 
                     </div>
-                </div>
+                
             </div>
         </div>
 
-        <div class="container pb-3">
+        <div class="container">
 
-            <h1 class="text-muted pl-2"><span class="text-danger">SORY GORDO </span>Market</h1>
+            <h1 class="titulo text-dark pl-3">MotorAll</h1>
 
             <nav class="navbar navbar-expand-lg navbar-light">
                 <button class="navbar-toggler ml-auto" type="button" data-toggle="collapse" data-target="#barra" aria-controls="barra" aria-expanded="false" aria-label="barra de navegación">
                     <span class="navbar-toggler-icon"></span>
                 </button>
-                <div class="collapse navbar-collapse" id="barra">
+                <div class="navbar-collapse" id="barra">
                     <ul class="navbar-nav ml-auto">
                         <li class="nav-item">
-                            <a class="nav-link" href="#">Nuestros vehículos</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">Servicios</a>
+                            <a class="nav-link" href="#">Mejores ofertas</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="#">Contacto</a>
@@ -110,11 +102,17 @@ require "templates/conexion.php";
         </div>
     </header>
 
+<div class="container  bg-light">
+        <div class="fotorama">
+            <img src="img/2.jpg" alt="s1">
+            <img src="img/1.jpg" alt="s2">
+            <img src="img/3.jpg" alt="s3">
+        </div>
+    </div>
 
 
 
-
-    <main class="container bg-white">
+    <main class="container bg-light">
 
         <?php 
         
@@ -124,7 +122,6 @@ require "templates/conexion.php";
 
         <!------------------------------------------------------------------ PÁGINA MAESTRO --->
         <section class="row">
-            <h2 class="col-12 py-4 text-secondary text-center">Lista de Autos</h2>
 
             <?php
             $query = "SELECT id_auto, id_marca, nombre, detalles, imagen, precio FROM autos";
@@ -144,14 +141,14 @@ require "templates/conexion.php";
                         <p class="card-text">$
                             <?php echo $column['precio']; ?>
                         </p>
-                        <a class="btn btn-primary float-right" href="index.php?p=<?php echo $column['id_auto']; ?>" class="btn">más</a>
+                        <a class="btn btn-success float-center" href="index.php?p=<?php echo $column['id_auto']; ?>" class="btn">Comprar ahora</a>
                     </div>
                 </div>
             </div>
 
             <?php
                 
-            } // Cierra el while
+            } 
             
             ?>
         </section>
@@ -159,12 +156,10 @@ require "templates/conexion.php";
 
         <?php
             
-        }else{ // else del GET de p
+        }else{ 
             
         ?>
 
-
-        <!--------------------------------------------------------------------- DETALLE --->
         <section class="row pb-5 justify-content-md-center">
 
             <?php
@@ -254,21 +249,11 @@ require "templates/conexion.php";
 
         <?php
             
-        } // Cierra del if del GET de p.
+        } 
         
         ?>
 
     </main>
-
-
-    <!------------------------------------------------------------------------------ FOOTER --->
-    <footer class="fondo2">
-        <div class="container p-5">
-            <p class="text-light text-center m-0">Programación Visual III - Escuela Da Vinci</p>
-        </div>
-    </footer>
-
-
     <!-- MODAL FALLO DE LOGIN -->
 
     <div class="modal fade" id="errorlogin" tabindex="-1" role="dialog" aria-labelledby="errorlogintitulo" aria-hidden="true">
@@ -322,5 +307,7 @@ require "templates/conexion.php";
     mysqli_close($cnx);
     ?>
 </body>
+<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/fotorama/4.6.4/fotorama.js"></script>
 
 </html>

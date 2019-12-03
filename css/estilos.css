@@ -1,5 +1,7 @@
-.bg-negro {
-  background-color: #000000;
+.container {
+    width: 100%;
+    margin: auto;
+    padding: 1% 2%;
 }
 
 .navbar.navbar-1 .navbar-toggler-icon {
@@ -219,6 +221,11 @@ opacity: 0;
 transform: rotate(-45deg);
 top: 21px;
 left: 8px;
+}
+
+.titulo{
+    text-align: center;
+    font-weight:100;
 }
 
 .fondo {
