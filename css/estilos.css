@@ -1,0 +1,38 @@
+.fondo {
+    background-color: #e0eae0;
+}
+
+.fondo2 {
+    background-color: cadetblue;
+}
+
+.fondo3 {
+    background-color: #c0cac0;
+}
+
+
+.card-img-top {
+    height: 230px;
+    width: auto;
+}
+
+h1 {
+    position: absolute;
+    z-index: 1030;
+}
+
+#comentarios div:nth-child(odd) {
+    background-color: aquamarine;
+}
+
+
+
+
+
+
+
+
+
+
+
+
